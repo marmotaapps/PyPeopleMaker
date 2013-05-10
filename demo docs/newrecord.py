@@ -52,12 +52,10 @@ def phonenumber( format = 0 ):
 	
 def ssn( seperator = '' ):
 	''' Returns a valid Social Security Number w/ specified seperator between 123,45,6789. Default is nothing. '''
-	if len( seperator ) <= 1:
-		while True:
-			ssn = randrange( 001010001, 771999999 )
-			if ssn not in range( 666000000, 666999999 ): break
-		return str( ssn[ :3 ] ) + seperator + str( ssn[ 3:5 ] ) + seperator + str( ssn[ 5: ] )
-	else: return 'Invalid optional argument. Omit for no seperator, or enter one character. '
+	while True:
+		ssn = randrange( 001010001, 771999999 )
+		if ssn not in range( 666000000, 666999999 ): break
+	return str( ssn[ :3 ] ) + seperator + str( ssn[ 3:5 ] ) + seperator + str( ssn[ 5: ] )
 
 def address( address2_allowed = 0 ):
 	''' Returns a list [ Address1, optional Address2 ] Address2 is blank unless specified "TRUE". '''
